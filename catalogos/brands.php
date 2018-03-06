@@ -10,7 +10,7 @@
   
     mysqli_select_db($conexion, "saw");
 
-    $valores = "SELECT COUNT(*) from categorias";
+    $valores = "SELECT COUNT(*) from brands";
     $lector = mysqli_query($conexion, $valores);
     $row = mysqli_fetch_array($lector);
     $id = $row[0]+1;
@@ -73,17 +73,17 @@
 
             </div>
             <div class="col-4">
-              <form action="categorias.php" method="post">
+              <form action="brands.php" method="post">
                 <div class="form-group">
                 
                   <label for="id">ID</label><br>
                   <?php
-                  echo "<input id='id' class='input' type='text' placeholder='$id' readonly=''>";
+                  echo "<input class='input' type='text' placeholder='$id' readonly=''>";
                   ?>
                 </div>
                 <div class="form-group">
                   <label for="nombre">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Nombre de la categoría..." name="nombre">
+                  <input type="text" class="form-control" id="nombre" placeholder="Nombre de la marca..." name="nombre">
                 </div>
                 <input type="submit" class="btn btn-warning">
               </form>
@@ -103,7 +103,7 @@
         $nombre = $_POST['nombre'];
         echo $nombre;
         
-        $consultaSQL="INSERT INTO `categorias`(`nombre`) VALUES('$nombre');";
+        $consultaSQL="INSERT INTO `brands`(`name`) VALUES('$nombre');";
         $resultados=mysqli_query($conexion,$consultaSQL);
       }
     ?>
