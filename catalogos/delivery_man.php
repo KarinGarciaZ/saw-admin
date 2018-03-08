@@ -131,8 +131,7 @@
       if (@$_POST['nombre']) {
 
         $nombre = $_POST['nombre'];
-        $contrasenia = $_POST['contra'];
-        echo $nombre;
+        $contrasenia = $_POST['contra'];        
         
         $consultaSQL="INSERT INTO `delivery_man`(`name`, `password`) VALUES('$nombre', '$contrasenia');";
         $resultados=mysqli_query($conexion,$consultaSQL);
