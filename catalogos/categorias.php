@@ -32,7 +32,7 @@
     <link href="../css/simple-sidebar.css" rel="stylesheet">
   </head>
   <body>
-    <div id="wrapper">
+    <div id="wrapper" class="toggled">
 
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
@@ -47,10 +47,10 @@
             <a href="brands.php">Marcas</a>
         </li>
         <li>
-            <a href="#">Overview</a>
+            <a href="administrators.php">Administradores</a>
         </li>
         <li>
-            <a href="#">Events</a>
+            <a href="delivery_man.php">Repartidores</a>
         </li>
         <li>
             <a href="#">About</a>
@@ -92,8 +92,6 @@
               
             </div>
           </div>         
-
-            <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
         </div>
     </div>
 
@@ -117,14 +115,6 @@
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
   
   </body>
 </html>

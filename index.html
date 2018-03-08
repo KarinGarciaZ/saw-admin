@@ -20,7 +20,7 @@
 
 <body>
 
-    <div id="wrapper">
+    <div id="wrapper" class="toggled">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -35,10 +35,10 @@
                     <a href="catalogos/brands.php">Marcas</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
+                    <a href="catalogos/administrators.php">Administradores</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="catalogos/delivery_man.php">Repartidores</a>
                 </li>
                 <li>
                     <a href="#">About</a>
@@ -53,14 +53,6 @@
         </div>
         <!-- /#sidebar-wrapper -->
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-
     </div>
     <!-- /#wrapper -->
 
@@ -69,12 +61,7 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+    
 
 </body>
 
