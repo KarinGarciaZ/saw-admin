@@ -27,6 +27,7 @@
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -69,35 +70,44 @@
     <div id="page-content-wrapper">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-4">
-
+            <div class="col-4 text-center">
+                <h3>Registro de administradores</h3>
+                <i class="fab fa-adn fa-10x"></i>
             </div>
-            <div class="col-4">
+            <div class="col-8">
               <form action="administrators.php" method="post">
                 <div class="form-group">
                   <label for="id">ID</label>
-                  <?php
-                    echo "<input class='input' type='text' placeholder='$id' readonly=''>";
-                  ?>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <?php
+                        echo "<input class='form-control' type='text' placeholder='$id' readonly=''>";
+                      ?>
+                    </div>
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="nombre">Nombre</label>
                   <input type="text" class="form-control" id="nombre" placeholder="Nombre del administrador..." name="nombre">
                 </div>
                 <div class="form-group">
-                  <label for="nombre">Contraseña</label>
-                  <input type="password" class="form-control" id="nombre" placeholder="Contraseña..." name="contra">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label for="nombre">Contraseña</label>
+                      <input type="password" class="form-control" id="nombre" placeholder="Contraseña..." name="contra">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="nombre">Verificar contraseña</label>
+                      <input type="password" class="form-control" id="nombre" placeholder="Verificar contraseña...">
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="nombre">Verificar contrasenia</label>
-                  <input type="password" class="form-control" id="nombre" placeholder="Verificar contraseña...">
-                </div>
+                
                 <div class="container">
                   <div class="row">
                     <input type="submit" class="btn btn-warning">
                   </div>
                 </div>
-                
               </form>
             </div>
           </div>         
