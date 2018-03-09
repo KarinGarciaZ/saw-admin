@@ -10,6 +10,15 @@
   
     mysqli_select_db($conexion, "saw");
 
+    if (@$_POST['nombre']) {
+      
+      $nombre = $_POST['nombre'];
+      $contrasenia = $_POST['contra'];        
+      
+      $consultaSQL="INSERT INTO `delivery_man`(`name`, `password`) VALUES('$nombre', '$contrasenia');";
+      $resultados=mysqli_query($conexion,$consultaSQL);
+    }
+
     $valores = "SELECT COUNT(*) from delivery_man";
     $lector = mysqli_query($conexion, $valores);
     $row = mysqli_fetch_array($lector);
@@ -73,13 +82,22 @@
     <div id="page-content-wrapper">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-8">
+            <div class="col-4 text-center" style="padding-top:40px">
+              <h3>Registro de repartidores</h3>
+              <i class="fas fa-address-card fa-10x" style="color: orange"></i>
+            </div>
+            <div class="col-8 marginFormsTwo">
+              
               <form action="delivery_man.php" method="post">
                 <div class="form-group">
-                  <label for="id">ID</label>
-                  <?php
-                    echo "<input class='input' type='text' placeholder='$id' readonly=''>";
-                  ?>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label for="id">ID</label>
+                      <?php
+                        echo "<input class='form-control' type='text' placeholder='$id' readonly=''>";
+                      ?>
+                    </div>
+                  </div>                  
                 </div>
                 <div class="form-group">
                   <label for="nombre">Nombre</label>
@@ -101,22 +119,23 @@
 
                 </div>
                 <div class="container">
-                  <div class="row">
+                  <div style="text-align: center">
                     <input type="submit" class="btn btn-warning">
                   </div>
                 </div>
                 
               </form>
-            </div>
-            <div class="col-4 text-center">
-                <h3>Registro de repartidores</h3>
-                <i class="fas fa-address-card fa-10x"></i>
-            </div>
+            </div>            
           </div>       
         </div>
     </div>
+
+    <hr>
+
     <div class="container">
-    <div class="col-md-8 offset-md-2">
+    <div class="col-md-8 offset-md-2" style="text-align: center">
+      <h2>Consulta general de repartidores</h2>
+      <hr>
       <table class="table">
           <thead class="thead-inverse">
             <tr class="bg-warning">
@@ -137,18 +156,6 @@
       </table>
     </div>
   </div>
-
-    <?php     
-      if (@$_POST['nombre']) {
-
-        $nombre = $_POST['nombre'];
-        $contrasenia = $_POST['contra'];        
-        
-        $consultaSQL="INSERT INTO `delivery_man`(`name`, `password`) VALUES('$nombre', '$contrasenia');";
-        $resultados=mysqli_query($conexion,$consultaSQL);
-      }
-    ?>
-
 
     <!-- /#page-content-wrapper -->
 

@@ -28,7 +28,7 @@ body {
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: #000;
+  background: gray;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -70,7 +70,7 @@ body {
 .sidebar-nav li a {
   display: block;
   text-decoration: none;
-  color: #999999;
+  color: orange;
 }
 
 .sidebar-nav li a:hover {
@@ -123,6 +123,12 @@ body {
   .marginForms{
     border: solid 1px gray;
     border-radius: 10px;
+    padding: 20px;
+  }
+
+  .marginFormsTwo{
+
+    border-left: solid 1px gray;
     padding: 20px;
   }
 }

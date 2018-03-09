@@ -53,13 +53,7 @@
             <a href="delivery_man.php">Repartidores</a>
         </li>
         <li>
-            <a href="#">About</a>
-        </li>
-        <li>
-            <a href="#">Services</a>
-        </li>
-        <li>
-            <a href="#">Contact</a>
+            <a href="products.php">Productos</a>
         </li>
       </ul>
     </div>
