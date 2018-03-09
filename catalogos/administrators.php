@@ -9,6 +9,14 @@
     $conexion->set_charset("utf8");    
   
     mysqli_select_db($conexion, "saw");
+    if (@$_POST['nombre']) {
+      
+      $nombre = $_POST['nombre'];
+      $contrasenia = $_POST['contra'];        
+      
+      $consultaSQL="INSERT INTO `administrator`(`name`, `password`) VALUES('$nombre', '$contrasenia');";
+      $resultados=mysqli_query($conexion,$consultaSQL);
+    }
 
     $valores = "SELECT COUNT(*) from administrator";
     $lector = mysqli_query($conexion, $valores);
@@ -70,11 +78,12 @@
     <div id="page-content-wrapper">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-4 text-center">
+            <div class="col-4 text-center" style="padding-top:40px">
                 <h3>Registro de administradores</h3>
-                <i class="fab fa-adn fa-10x"></i>
+                <i class="fab fa-adn fa-10x" style="color: orange"></i>
             </div>
-            <div class="col-8">
+            <div class="col-8 marginFormsTwo">
+
               <form action="administrators.php" method="post">
                 <div class="form-group">
                   <label for="id">ID</label>
@@ -91,20 +100,23 @@
                   <input type="text" class="form-control" id="nombre" placeholder="Nombre del administrador..." name="nombre">
                 </div>
                 <div class="form-group">
+                <div id="passwordForm">
                   <div class="row">
                     <div class="col-md-6">
                       <label for="nombre">Contraseña</label>
-                      <input type="password" class="form-control" id="nombre" placeholder="Contraseña..." name="contra">
+                      <input type="password" class="form-control" id="password" placeholder="Contraseña..." name="contra" required>
                     </div>
                     <div class="col-md-6">
                       <label for="nombre">Verificar contraseña</label>
-                      <input type="password" class="form-control" id="nombre" placeholder="Verificar contraseña...">
+                      <input type="password" class="form-control" id="confirm_password" placeholder="Verificar contraseña..." required>
                     </div>
                   </div>
+
+                </div>
                 </div>
                 
                 <div class="container">
-                  <div class="row">
+                  <div style="text-align: center">
                     <input type="submit" class="btn btn-warning">
                   </div>
                 </div>
@@ -114,10 +126,12 @@
         </div>
     </div>
     <div class="container">
-    <div class="col-md-8 offset-md-2">
+    <div class="col-md-8 offset-md-2" style="text-align: center">
+      <h2>Consulta general de administradores</h2>
+      <hr>
       <table class="table">
           <thead class="thead-inverse">
-            <tr class="bg-success">
+            <tr class="bg-warning">
               <th>ID</th>
               <th>Nombre</th>
             </tr>
@@ -141,7 +155,6 @@
 
         $nombre = $_POST['nombre'];
         $contrasenia = $_POST['contra'];
-        echo $nombre;
         
         $consultaSQL="INSERT INTO `administrator`(`name`, `password`) VALUES('$nombre', '$contrasenia');";
         $resultados=mysqli_query($conexion,$consultaSQL);
@@ -154,12 +167,26 @@
     </div>
     <!-- /#wrapper -->
 
+      <script>
+        var password = document.getElementById("password")
+        , confirm_password = document.getElementById("confirm_password");
+
+        function validatePassword(){
+          if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("La contraseña no coincide");
+          } else {
+            confirm_password.setCustomValidity('');
+          }
+        }
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+        
+      </script>
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Menu Toggle Script -->
-
   
   </body>
 </html>
