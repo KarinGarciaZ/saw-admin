@@ -54,13 +54,7 @@
             <a href="delivery_man.php">Repartidores</a>
         </li>
         <li>
-        <a href="#">Services</a>
-        </li>
-        <li>
-            <a href="#">Services</a>
-        </li>
-        <li>
-            <a href="#">Contact</a>
+          <a href="products.php">Productos</a>
         </li>
       </ul>
     </div>
@@ -72,9 +66,9 @@
           <div class="row">
             <div class="col-4 text-center">
                 <h3>Registro de administradores</h3>
-                <i class="fab fa-adn fa-10x"></i>
+                <i class="fab fa-adn fa-10x" style="color: orange"></i>
             </div>
-            <div class="col-8">
+            <div class="col-8 marginFormsTwo">
               <form action="administrators.php" method="post">
                 <div class="form-group">
                   <label for="id">ID</label>
@@ -113,11 +107,14 @@
           </div>         
         </div>
     </div>
+    <hr>
     <div class="container">
-    <div class="col-md-8 offset-md-2">
+    <div class="col-md-8 offset-md-2" style="text-align: center">
+      <h2>Consulta general de administradores</h2>
+      <hr>
       <table class="table">
           <thead class="thead-inverse">
-            <tr class="bg-success">
+            <tr class="bg-warning">
               <th>ID</th>
               <th>Nombre</th>
             </tr>

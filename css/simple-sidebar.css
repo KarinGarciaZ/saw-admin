@@ -28,15 +28,15 @@ body {
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: gray;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  box-shadow: 10px 0 10px orange;
 }
 
 #wrapper.toggled #sidebar-wrapper {
-  width: 250px;
+  width: 200px;
 }
 
 #page-content-wrapper {
@@ -56,7 +56,7 @@ body {
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: 250px;
+  width: 195px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -71,11 +71,13 @@ body {
   display: block;
   text-decoration: none;
   color: orange;
+  background: rgb(250, 236, 212);
+  /*margin-bottom: solid 1px white;*/
 }
 
 .sidebar-nav li a:hover {
   text-decoration: none;
-  color: #fff;
+  color: orangered;
   background: rgba(255, 255, 255, 0.2);
 }
 
@@ -109,7 +111,7 @@ body {
     width: 0;
   }
   #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+    width: 200px;
   }
   #page-content-wrapper {
     padding: 20px;
