@@ -14,7 +14,23 @@
     $lector = mysqli_query($conexion, $valores);
     $row = mysqli_fetch_array($lector);
     $id = $row[0]+1;
-?>
+
+    if (@$_POST['nombre']) {
+      
+      $nombre = $_POST['nombre'];
+      
+      $consultaSQL="INSERT INTO `brands`(`name`) VALUES('$nombre');";
+      $resultados=mysqli_query($conexion,$consultaSQL);
+      ?>
+
+      <script>
+        alert("Insertado exitosamente");
+      </script>
+
+    <?php  
+      }
+
+    ?>
 
 <html>
   <head>
@@ -69,7 +85,7 @@
     <div id="page-content-wrapper">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-4">
+            <div class="col-4"> 
 
             </div>
             <div class="col-4">
@@ -78,7 +94,7 @@
                 
                   <label for="id">ID</label><br>
                   <?php
-                  echo "<input class='input' type='text' placeholder='$id' readonly=''>";
+                  echo "<input type='text' class='form-control' placeholder='$id' readonly=''>";
                   ?>
                 </div>
                 <div class="form-group">
@@ -93,19 +109,7 @@
             </div>
           </div>         
         </div>
-    </div>
-
-    <?php     
-      if (@$_POST['nombre']) {
-
-        $nombre = $_POST['nombre'];
-        echo $nombre;
-        
-        $consultaSQL="INSERT INTO `brands`(`name`) VALUES('$nombre');";
-        $resultados=mysqli_query($conexion,$consultaSQL);
-      }
-    ?>
-
+    </div>   
 
     <!-- /#page-content-wrapper -->
 
