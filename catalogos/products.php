@@ -10,18 +10,23 @@
   
     mysqli_select_db($conexion, "saw");    
 
-    if (@$_POST['nombre']) {
+    if (@$_POST['nombre'] && $_POST['file'] && $_POST['precio'] && $_POST['existencia'] && $_POST['categoria'] && $_POST['brand']) {
       
       $nombre = $_POST['nombre'];
+      $file = $_POST['file'];
+      $precio = $_POST['precio'];
+      $existencia = $_POST['existencia'];
+      $categoria = $_POST['categoria'];
+      $brand = $_POST['brand'];
       
-      $consultaSQL="INSERT INTO `brands`(`name`) VALUES('$nombre');";
+      $consultaSQL="INSERT INTO `products`(`name`, `idBrand`, `idCategory`, `image`, `cost`, `stock`) VALUES('$nombre', $brand, $categoria, '$file', $precio, $existencia);";
       $resultados=mysqli_query($conexion,$consultaSQL);
       if ($resultados)
         echo "<script>alert('Insertado exitosamente');</script>";    
       else
         echo "<script>alert('Error');</script>";
     }
-    $valores = "SELECT COUNT(*) from brands";
+    $valores = "SELECT COUNT(*) from products";
     $lector = mysqli_query($conexion, $valores);
     $row = mysqli_fetch_array($lector);
     $id = $row[0]+1;
@@ -76,26 +81,82 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-4"> 
-
             </div>
-            <div class="col-4 marginForms">
-              <form action="brands.php" method="post">
-                <div class="form-group">
+            <div class="col-8 marginFormsTwo">
+              <form action="products.php" method="post">
                 
-                  <label for="id">ID</label><br>
-                  <?php
-                    echo "<input type='text' class='form-control' placeholder='$id' readonly=''>";
-                  ?>
+                <div class="row">
+                  <div class="col-3">
+                    <div class="form-group">        
+                      <label for="id">ID</label><br>
+                      <?php
+                        echo "<input type='text' class='form-control' placeholder='$id' readonly=''>";
+                      ?>
+                    </div>
+                  </div>
+                  <div class="col-9">
+                    <div class="form-group">
+                      <label for="nombre">Nombre</label>
+                      <input type="text" class="form-control" id="nombre" placeholder="Nombre del producto..." name="nombre">
+                    </div>
+                  </div>
+                </div>                  
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="precio">Precio</label>
+                      <input type="text" class="form-control" id="precio" placeholder="Precio del producto..." name="precio">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="existencia">Existencia</label>
+                      <input type="number" class="form-control" id="existencia" placeholder="Existencia del producto..." name="existencia">
+                    </div>
+                  </div>      
+                </div>    
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="categoria">Categoria</label>
+                      <select class= "form-control" name="categoria">
+                      <?php 
+                        foreach ($conexion->query('SELECT * from `categorias`') as $row){
+                          echo "<option value= '".$row['id']."'>";
+                          echo $row['nombre'];
+                          echo "</option>";
+                        } ?>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                    <label for="brand">Marca</label>
+                    <select class= "form-control" name="brand">
+                      <?php 
+                        foreach ($conexion->query('SELECT * from `brands`') as $row){
+                          echo "<option value= '".$row['id']."'>";
+                          echo $row['name'];
+                          echo "</option>";
+                        } ?>
+                      </select>
+                    </div>
+                  </div>
                 </div>
+
                 <div class="form-group">
-                  <label for="nombre">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Nombre de la marca..." name="nombre">
+                  <div class="btn-grabar">
+                    <input type="file" name="file" id="file" class="inputfile" />                    
+                  </div> 
                 </div>
-                <input type="submit" class="btn btn-warning">
+                
+                <div class="form-group">
+                  <input type="submit" class="btn btn-warning">
+                </div>
+
               </form>
-            </div>
-            <div class="col-4">
-              
             </div>
           </div>         
         </div>

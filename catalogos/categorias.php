@@ -10,6 +10,19 @@
   
     mysqli_select_db($conexion, "saw");
 
+    if (@$_POST['nombre']) {
+      
+      $nombre = $_POST['nombre'];
+      echo $nombre;
+      
+      $consultaSQL="INSERT INTO `categorias`(`nombre`) VALUES('$nombre');";
+      $resultados=mysqli_query($conexion,$consultaSQL);
+      if ($resultados)
+        echo "<script>alert('Insertado exitosamente');</script>";    
+      else
+        echo "<script>alert('Error');</script>";
+    }
+
     $valores = "SELECT COUNT(*) from categorias";
     $lector = mysqli_query($conexion, $valores);
     $row = mysqli_fetch_array($lector);
@@ -66,13 +79,13 @@
             <div class="col-4">
 
             </div>
-            <div class="col-4">
+            <div class="col-4 marginForms">
               <form action="categorias.php" method="post">
                 <div class="form-group">
                 
                   <label for="id">ID</label><br>
                   <?php
-                  echo "<input id='id' class='input' type='text' placeholder='$id' readonly=''>";
+                  echo "<input id='id' class='form-control' type='text' placeholder='$id' readonly=''>";
                   ?>
                 </div>
                 <div class="form-group">
@@ -85,20 +98,38 @@
             <div class="col-4">
               
             </div>
-          </div>         
+          </div>  
+          
+          <hr>
+
+          <div class="container">
+
+            <div class="col-md-8 offset-md-2" style="text-align: center">
+              <h2>Consulta general de marcas</h2>
+              <hr>
+              <table class="table">
+                <thead class="thead-inverse">
+                  <tr class="bg-warning">
+                    <th>ID</th>
+                    <th>Nombre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <?php 
+                  foreach ($conexion->query('SELECT * from `categorias`') as $row){ ?> 
+                    <tr>
+                      <td><?php echo $row['id'] ?></td>
+                      <td><?php echo $row['nombre'] ?></td>
+                    </tr>
+                <?php } ?>              
+                </tbody>
+              </table>
+            </div>
+          </div>  
+
+
         </div>
     </div>
-
-    <?php     
-      if (@$_POST['nombre']) {
-
-        $nombre = $_POST['nombre'];
-        echo $nombre;
-        
-        $consultaSQL="INSERT INTO `categorias`(`nombre`) VALUES('$nombre');";
-        $resultados=mysqli_query($conexion,$consultaSQL);
-      }
-    ?>
 
 
     <!-- /#page-content-wrapper -->

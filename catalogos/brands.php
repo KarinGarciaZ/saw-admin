@@ -97,8 +97,35 @@
             <div class="col-4">
               
             </div>
-          </div>         
-        </div>
+          </div> 
+
+          <hr>
+
+          <div class="container">
+
+            <div class="col-md-8 offset-md-2" style="text-align: center">
+              <h2>Consulta general de marcas</h2>
+              <hr>
+              <table class="table">
+                <thead class="thead-inverse">
+                  <tr class="bg-warning">
+                    <th>ID</th>
+                    <th>Nombre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <?php 
+                  foreach ($conexion->query('SELECT * from `brands`') as $row){ ?> 
+                    <tr>
+                      <td><?php echo $row['id'] ?></td>
+                      <td><?php echo $row['name'] ?></td>
+                    </tr>
+                <?php } ?>              
+                </tbody>
+              </table>
+            </div>
+          </div>  
+      </div>
     </div>   
 
     <!-- /#page-content-wrapper -->

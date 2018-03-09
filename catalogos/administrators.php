@@ -16,6 +16,7 @@
       
       $consultaSQL="INSERT INTO `administrator`(`name`, `password`) VALUES('$nombre', '$contrasenia');";
       $resultados=mysqli_query($conexion,$consultaSQL);
+      
     }
 
     $valores = "SELECT COUNT(*) from administrator";

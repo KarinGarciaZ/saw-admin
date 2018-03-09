@@ -126,7 +126,7 @@
 
     <hr>
 
-    <div class="container">
+  <div class="container">
     <div class="col-md-8 offset-md-2" style="text-align: center">
       <h2>Consulta general de repartidores</h2>
       <hr>
