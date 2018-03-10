@@ -101,12 +101,12 @@
                   <div class="row">
                       <div class="col-md-6">
                         <label for="nombre">Contraseña</label>
-                        <input type="password" class="form-control" id="nombre" placeholder="Contraseña de repartidor..." name="contra">
+                        <input type="password" class="form-control" id="password" placeholder="Contraseña de repartidor..." name="contra" required>
                       </div> 
 
                       <div class="col-md-6">
                         <label for="nombre">Verificar contrasenia</label>
-                        <input type="password" class="form-control" id="nombre" placeholder="Verificar contraseña...">
+                        <input type="password" class="form-control" id="confirm_password" placeholder="Verificar contraseña..." required>
                       </div>  
                   
                   </div>
@@ -155,7 +155,21 @@
 
     </div>
     <!-- /#wrapper -->
+    <script>
+        var password = document.getElementById("password")
+        , confirm_password = document.getElementById("confirm_password");
 
+        function validatePassword(){
+          if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("La contraseña no coincide");
+          } else {
+            confirm_password.setCustomValidity('');
+          }
+        }
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+        
+      </script>
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
