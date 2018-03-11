@@ -43,6 +43,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="../css/simple-sidebar.css" rel="stylesheet">
@@ -80,11 +81,12 @@
     <div id="page-content-wrapper">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-4"> 
+            <div class="col-4 text-center" style="padding-top:40px"> 
+                <h3>Registro de productos</h3>
+                <i class="fas fa-shopping-basket fa-10x" style="color: orange"></i>
             </div>
             <div class="col-8 marginFormsTwo">
               <form action="products.php" method="post">
-                
                 <div class="row">
                   <div class="col-3">
                     <div class="form-group">        
