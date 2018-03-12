@@ -51,7 +51,9 @@
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
         <li class="SAW-Admin">
-            <a href="#">Start Bootstrap</a>
+          <a href="../index.html" class="logo">
+            <img src="../images/project/letras.png" alt="LOGO" class="sizeImage">
+          </a>
         </li>
         <li>
             <a href="categorias.php">Categorías</a>

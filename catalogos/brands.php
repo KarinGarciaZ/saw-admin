@@ -50,7 +50,7 @@
       <ul class="sidebar-nav">
         <li class="SAW-Admin">
           <a href="../index.html" class="logo">
-            <img src="images/project/letras.jpg" alt="IMG-LOGO">
+            <img src="../images/project/letras.png" alt="LOGO" class="sizeImage">
           </a>
         </li>
         <li>
@@ -138,7 +138,6 @@
 
     </div>
     <!-- /#wrapper -->
-
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
