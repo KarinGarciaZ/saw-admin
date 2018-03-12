@@ -99,6 +99,9 @@ body {
   color: #fff;
   background: none;
 }
+.sizeImage{
+  width: 170px;
+}
 
 @media(min-width:768px) {
   #wrapper {
