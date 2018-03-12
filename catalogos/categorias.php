@@ -79,21 +79,24 @@
             <div class="col-4">
 
             </div>
-            <div class="col-4 marginForms">
-              <form action="categorias.php" method="post">
-                <div class="form-group">
-                
-                  <label for="id">ID</label><br>
-                  <?php
-                  echo "<input id='id' class='form-control' type='text' placeholder='$id' readonly=''>";
-                  ?>
-                </div>
-                <div class="form-group">
-                  <label for="nombre">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Nombre de la categoría..." name="nombre">
-                </div>
-                <input type="submit" class="btn btn-warning">
-              </form>
+            <div class="col-4">
+              <h3 class="text-center">Registro de categorías</h3><hr>
+              <div class="marginForms">
+                <form action="categorias.php" method="post">
+                  <div class="form-group">
+                  
+                    <label for="id">ID</label><br>
+                    <?php
+                    echo "<input id='id' class='form-control' type='text' placeholder='$id' readonly=''>";
+                    ?>
+                  </div>
+                  <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre de la categoría..." name="nombre">
+                  </div>
+                  <input type="submit" class="btn btn-warning">
+                </form>
+              </div>              
             </div>
             <div class="col-4">
               

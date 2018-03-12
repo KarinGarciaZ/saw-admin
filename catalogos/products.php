@@ -81,11 +81,11 @@
     <div id="page-content-wrapper">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-4 text-center" style="padding-top:40px"> 
+            <div class="col-3 text-center" style="padding-top:40px"> 
                 <h3>Registro de productos</h3>
                 <i class="fas fa-shopping-basket fa-10x" style="color: orange"></i>
             </div>
-            <div class="col-8 marginFormsTwo">
+            <div class="col-9 marginFormsTwo">
               <form action="products.php" method="post">
                 <div class="row">
                   <div class="col-3">

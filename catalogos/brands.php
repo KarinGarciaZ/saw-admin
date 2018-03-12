@@ -49,7 +49,9 @@
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
         <li class="SAW-Admin">
-            <a href="#">Start Bootstrap</a>
+          <a href="../index.html" class="logo">
+            <img src="images/project/letras.jpg" alt="IMG-LOGO">
+          </a>
         </li>
         <li>
             <a href="categorias.php">Categorías</a>
@@ -74,25 +76,29 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
+          
           <div class="row">
             <div class="col-4"> 
-
+              
             </div>
-            <div class="col-4 marginForms">
-              <form action="brands.php" method="post">
-                <div class="form-group">
-                
-                  <label for="id">ID</label><br>
-                  <?php
-                    echo "<input type='text' class='form-control' placeholder='$id' readonly=''>";
-                  ?>
-                </div>
-                <div class="form-group">
-                  <label for="nombre">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Nombre de la marca..." name="nombre">
-                </div>
-                <input type="submit" class="btn btn-warning">
-              </form>
+            <div class="col-4">
+            <h3 class="text-center">Registro de marcas</h3><hr>
+              <div class="marginForms">
+                <form action="brands.php" method="post">
+                  <div class="form-group">
+                  
+                    <label for="id">ID</label><br>
+                    <?php
+                      echo "<input type='text' class='form-control' placeholder='$id' readonly=''>";
+                    ?>
+                  </div>
+                  <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre de la marca..." name="nombre">
+                  </div>
+                  <input type="submit" class="btn btn-warning">
+                </form>
+              </div>              
             </div>
             <div class="col-4">
               
