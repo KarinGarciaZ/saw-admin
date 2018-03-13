@@ -10,12 +10,13 @@
   
     mysqli_select_db($conexion, "saw");
 
-    if (@$_POST['nombre']) {
+    if (@$_POST['nombre'] && $_POST['file']) {
       
       $nombre = $_POST['nombre'];
+      $file = $_POST['file'];
       echo $nombre;
       
-      $consultaSQL="INSERT INTO `categorias`(`nombre`) VALUES('$nombre');";
+      $consultaSQL="INSERT INTO `categorias`(`nombre`, `image`) VALUES('$nombre', '$file');";
       $resultados=mysqli_query($conexion,$consultaSQL);
       if ($resultados)
         echo "<script>alert('Insertado exitosamente');</script>";    
@@ -95,6 +96,11 @@
                   <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" placeholder="Nombre de la categoría..." name="nombre">
+                  </div>
+                  <div class="form-group">
+                    <div class="btn-grabar">
+                      <input type="file" name="file" id="file" class="inputfile" />                    
+                    </div> 
                   </div>
                   <input type="submit" class="btn btn-warning">
                 </form>

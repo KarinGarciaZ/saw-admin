@@ -147,17 +147,6 @@
     </div>
   </div>
 
-    <?php     
-      if (@$_POST['nombre']) {
-
-        $nombre = $_POST['nombre'];
-        $contrasenia = $_POST['contra'];
-        
-        $consultaSQL="INSERT INTO `administrator`(`name`, `password`) VALUES('$nombre', '$contrasenia');";
-        $resultados=mysqli_query($conexion,$consultaSQL);
-      }
-    ?>
-
 
     <!-- /#page-content-wrapper -->
 
