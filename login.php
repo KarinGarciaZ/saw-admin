@@ -1,7 +1,7 @@
 <?php
         $host_db="localhost";
         $usuario_db="root";
-        $pass_db="root";
+        $pass_db="Bankai123";
         $db="saw";
 
         $conexion=new mysqli($host_db,$usuario_db, $pass_db);
@@ -10,14 +10,14 @@
         mysqli_select_db($conexion, "saw");
         if(@$_POST['nombre']){
             $nombre = $_POST['nombre'];
-            $contrasenia = $_POST['contra'];     
+            $contrasenia = $_POST['contra'];   
             
-            $consultaSQL= "SELECT * FROM `administrator` WHERE `name` ='".$nombre."' AND password ='".$contrasenia."';";
+            $consultaSQL= "SELECT * FROM `administrator` WHERE username ='".$nombre."' AND password = '".$contrasenia."';";
             $resultados=mysqli_query($conexion, $consultaSQL);
-            $row = mysqli_fetch_array($resultado);
-            if($row['name'] == $nombre){
+            $row = mysqli_fetch_array($resultados);
+            if($row['username'] == $nombre){
                 echo "<script>alert('usuario regristrado')</script>";
-                echo "<script>window.history.pushState('', '', index.html);</script>";
+                echo "<script>window.history.pushState('', '', 'index.html');</script>";
                 echo "<script>location.reload();</script>";
                 //session_start(); //Star session
             }

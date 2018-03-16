@@ -2,7 +2,7 @@
   
     $host_db="localhost";
     $usuario_db="root";
-    $pass_db="root";
+    $pass_db="Bankai123";
     $db="saw";
   
     $conexion=new mysqli($host_db,$usuario_db, $pass_db);
@@ -89,12 +89,12 @@
                   
                     <label for="id">ID</label><br>
                     <?php
-                      echo "<input type='text' class='form-control' placeholder='$id' readonly=''>";
+                      echo "<input type='text' placeholder='$id' class='form-control' readonly=''>";
                     ?>
                   </div>
                   <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre de la marca..." name="nombre">
+                    <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre de la marca...">
                   </div>
                   <input type="submit" class="btn btn-warning">
                 </form>

@@ -2,7 +2,7 @@
   
     $host_db="localhost";
     $usuario_db="root";
-    $pass_db="root";
+    $pass_db="Bankai123";
     $db="saw";
   
     $conexion=new mysqli($host_db,$usuario_db, $pass_db);
@@ -14,7 +14,7 @@
       $nombre = $_POST['nombre'];
       $contrasenia = $_POST['contra'];        
       
-      $consultaSQL="INSERT INTO `administrator`(`name`, `password`) VALUES('$nombre', '$contrasenia');";
+      $consultaSQL="INSERT INTO `administrator`(`username`, `password`) VALUES('$nombre', '$contrasenia');";
       $resultados=mysqli_query($conexion,$consultaSQL);
       
     }
@@ -138,7 +138,7 @@
             foreach ($conexion->query('SELECT * from `administrator`') as $row){ ?> 
               <tr>
 	              <td><?php echo $row['id'] ?></td>
-                <td><?php echo $row['name'] ?></td>
+                <td><?php echo $row['username'] ?></td>
               </tr>
             <?php } ?>
           
